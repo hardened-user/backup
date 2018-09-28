@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# 20.09.2018
 #------------------------------------------------------------------------------
 import os
 import sys
@@ -236,7 +235,6 @@ def shell_exec(cmd, stdin=None):
 
 def pg_get_version(host, port, user):
     '''Получение версии БД'''
-    re_db_name = re.compile('^\s*([\w]+)\s*\|')
     #______________________________________________________
     cmd = '''psql -h "{}" -p {} -U "{}" -tA -c "SHOW server_version;"'''.format(host, port, user)
     rc, rd = shell_exec(cmd)
